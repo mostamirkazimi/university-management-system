@@ -1,0 +1,222 @@
+{
+  "teacher": [
+    {
+      "id": "457",
+      "teacher_name": "Sayed Ruhullah ",
+      "teacher_fname": "Sayed Ahmad",
+      "teacher_lastname": "Ayubi",
+      "email": "sayedruhullah@gmail.com",
+      "phone": "0780234571",
+      "address": "Kabul",
+      "education": "20",
+      "date_of_Birth": "1995-02-05",
+      "date_of_Join": "2025-02-06",
+      "gender": "male",
+      "age": 30,
+      "salary": 25000,
+      "over_time": 2000,
+      "faculty_name": "Computer Science",
+      "department_name": "IT"
+    },
+    {
+      "id": "262",
+      "teacher_name": "Maryam",
+      "teacher_fname": "Safar",
+      "teacher_lastname": "Ahmadi",
+      "email": "marya@gmail.com",
+      "phone": "0763212471",
+      "address": "Kabul",
+      "education": "18",
+      "date_of_Birth": "2000-02-01",
+      "date_of_Join": "2025-01-28",
+      "gender": "female",
+      "age": 25,
+      "salary": 12000,
+      "over_time": 1000,
+      "faculty_name": "Computer Science",
+      "department_name": "SE"
+    }
+  ],
+  "student": [
+    {
+      "id": "808",
+      "student_name": "Layla",
+      "student_fname": "Akbar",
+      "student_lastname": "Akbari",
+      "email": "layla@gmail.com",
+      "phone": "0791333247",
+      "address": "Kabul",
+      "gender": "female",
+      "age": 22,
+      "date_of_birth": "2003-06-19",
+      "date_of_join": "2025-01-26",
+      "faculty_name": "Economic",
+      "department_name": "BBA"
+    },
+    {
+      "id": "1000",
+      "student_name": "Abdul",
+      "student_fname": "Anwar",
+      "student_lastname": "Alizadah",
+      "email": "abdul@gmail.com",
+      "phone": "0765431235",
+      "address": "Maydan",
+      "gender": "male",
+      "age": 30,
+      "date_of_birth": "1995-08-01",
+      "date_of_join": "2025-02-06",
+      "faculty_name": "Economic",
+      "department_name": "BBA"
+    },
+    {
+      "id": "828",
+      "student_name": "Maryam",
+      "student_fname": "Asad",
+      "student_lastname": "Ataie",
+      "email": "maryam@gmail.com",
+      "phone": "0780446122",
+      "address": "mazar",
+      "gender": "female",
+      "age": 23,
+      "date_of_birth": "2003-12-02",
+      "date_of_join": "2025-02-06",
+      "faculty_name": "Farmacy",
+      "department_name": "BBA2",
+      "semster": "Five"
+    }
+  ],
+  "employee": [
+    {
+      "id": "646",
+      "employee_name": "Ali",
+      "employee_fname": "Ahmad",
+      "employee_lastname": "Ahmadi",
+      "email": "ahmad@gmail.com",
+      "phone": "078324561",
+      "address": "Herat",
+      "education": "18",
+      "gender": "male",
+      "age": 20,
+      "date_of_birth": "2010-03-28",
+      "date_of_join": "2025-02-06",
+      "salary": 20000,
+      "job": "Head",
+      "faculty_name": "Economic",
+      "department_name": "BBA"
+    }
+  ],
+  "faculty": [
+    {
+      "id": "262",
+      "faculty_name": "Computer Science",
+      "createDate": "2011-02-05",
+      "description": "Established in 2011,\n the Computer Science Faculty at Balkh University offers a B.Sc. degree based on a 4-year curriculum. It currently operates two main departments—Database & Information Systems and Software Engineering—with a third (Communication & Operating Systems) pending activation. The faculty includes 11 staff, a lab technician, and maintains, with one computer lab.Balkh University. Balkh University Key Details of the Faculty of Computer Science:Established: 2011. Departments: Active departments include Software Engineering and Database and Information Systems. Academic Structure: The program requires completion of eight semesters (approx. 145-155 credits).Facilities: Includes four classrooms and one computer lab.Staff: 11 faculty members with various academic rankings, including Assistant Professors and lecturers.Curriculum: Based on the standards set by the Ministry of Higher Education and Kabul University's Science Faculty. Balkh University Balkh University.The faculty is part of Balkh University, one of Afghanistan's largest institutions, founded in 1981 in Mazar-e-Sharif. The curriculum aims to provide foundational knowledge in software development and database management",
+      "faculty_logo": ""
+    },
+    {
+      "id": "432",
+      "faculty_name": "Economic",
+      "createDate": "1988-04-18",
+      "description":"Established in 1988, the Faculty of Economics at Balkh University in Mazar-i-Sharif is a key academic department within one of Afghanistan’s largest public universities. It offers undergraduate programs focusing on National Economy, Finance, Management, and Statistics, with a staff of 21 (mostly masters-level) and a 146-credit curriculum. Balkh University Balkh University Key information regarding the Faculty of Economics:Departments: The faculty currently operates four main departments: National Economy, Finance and Monetary Affairs, Administration and Enterprise Management, and Statistics and Econometrics. Academic Staff: The faculty consists of 21 members, including two females, 19 master's degree holders, and one doctor.Curriculum: The undergraduate program spans 146 credits.Context: Located within Balkh University (established 1986/1987), which serves roughly 18,000 students across various faculties.Balkh University Balkh University The faculty is aimed at producing skilled economists and managers for the region",
+      "faculty_logo": ""
+    },
+    {
+      "id": "878",
+      "faculty_name": "Farmacy",
+      "createDate": "2013-01-31",
+      "faculty_logo": "",
+      "description":"Established in 2013, the Faculty of Pharmacy at Balkh University aims to train professional pharmacists in Afghanistan. As of spring 2020, the faculty served 513 students (273 females, 240 males), staffed by young professors, adjunct lecturers, and administrative personnel. It is part of Balkh University, one of Afghanistan’s largest institutions.Balkh University Balkh University Key Information about the Pharmacy Faculty Establishment: 2013.Student Body (Spring 2020): 513 total students (273 females and 240 males).Staff: Comprised of newly recruited professors, adjunct lecturers, a teaching director, and an executive director.Purpose: The faculty focuses on training professional pharmacists to meet community health needs.Context: It operates within Balkh University, a large institution established in 1981, which houses 16 faculties including medicine and engineering.Balkh University Balkh University For more details on university-wide activities, you can visit the Balkh University homepage. Information regarding other faculties like Medicine or Sharia is also available through the university."
+    },
+    {
+      "id": "310",
+      "faculty_name": "Law",
+      "createDate": "2014-11-23",
+      "faculty_logo": "",
+      "description":"Balkh University, established in 1981 in Mazar-i-Sharif, is one of Afghanistan's largest public institutions. The university, with over 18,000 students and 16 faculties, offers a Faculty of Law and Political Science which provides undergraduate legal education and planning for advanced programs. It is distinct from the Sharia Faculty's Jurisprudence and Law department.Balkh University Balkh University Key Aspects of Law Faculty (Balkh University):Structure: Operates under the Faculty of Law and Political Science.Curriculum: Focuses on foundational legal studies, providing training in Afghan law and political science.Development: The university leadership has planned to create graduate programs (Master's level) in Law and Political Science.Context: While the main university offers Law and Political Science, the separate Faculty of Sharia (established 1993) also teaches "Jurisprudence and Law". Balkh University Balkh University For official updates and specific faculty inquiries, the Balkh University website is the primary resource."
+    },
+    {
+      "id": "203",
+      "faculty_name": "Agriculture",
+      "createDate": "2026-03-08",
+      "faculty_logo": "",
+      "description": "The Faculty of Agriculture at Balkh University, established in 1367 (1988/1989), is a key academic department in northern Afghanistan focused on modern agricultural education. It features departments in Forestry & Horticulture, Soil Science/Irrigation, and Agricultural Trade Management, having produced over 2,050 specialists. Balkh University Balkh University Key Details of the Faculty of Agriculture:Established: 1367 (1988/1989).Departments:Forestry & Horticulture: Established 1381, focuses on plant production and management.Soil Science & Irrigation: Established 1392, focuses on soil health and water management.Agricultural Trade Management: Established 1397, focuses on agribusiness.Structure: As part of Balkh University—a major public institution in Mazar-i-Sharif—the faculty aims to provide technical expertise to support regional agricultural needs.Academic Focus: The curriculum aims to combine traditional agricultural practices with modern scientific standards.Goal: The faculty focuses on developing professional expertise in sustainable agriculture, forestry, and agribusiness to support the local economy.Balkh University Balkh University Information regarding student enrollment indicates hundreds of students across various departments. The university, detailed on this page, often works on updating its academic curriculum to meet modern standards."
+    }
+  ],
+  "department": [
+    {
+      "id": "601",
+      "department_name": "IT",
+      "createDate": "2025-02-06",
+      "faculty_name": "Computer Science"
+    },
+    {
+      "id": "495",
+      "department_name": "BBA",
+      "createDate": "2025-02-25",
+      "faculty_name": "Economic"
+    },
+    {
+      "id": "33",
+      "department_name": "SE",
+      "createDate": "2025-02-04",
+      "faculty_name": "Computer Science"
+    },
+    {
+      "id": "68",
+      "department_name": "BBA2",
+      "createDate": "2017-06-15",
+      "faculty_name": "Economic"
+    }
+  ],
+  "subject": [
+    {
+      "id": "33",
+      "subject_name": "IMM",
+      "credite": 6,
+      "faculty_name": "Computer Science",
+      "department_name": "IT",
+      "semester": "Seccond"
+    },
+    {
+      "id": "817",
+      "subject_name": "MPFCS2",
+      "credite": 5,
+      "faculty_name": "Computer Science",
+      "department_name": "SE",
+      "semester": "Thired"
+    },
+    {
+      "id": "548",
+      "subject_name": "Math2",
+      "credite": 4,
+      "faculty_name": "Economic",
+      "department_name": "BBA",
+      "semester": "Four"
+    }
+  ],
+  "comments": [
+    {
+      "id": "129",
+      "name": "Sayed Mostamir Kazimi",
+      "email": "mayar@gmail.com",
+      "comment": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque, illo!"
+    },
+    {
+      "id": "591",
+      "name": "Ali Ahmadi",
+      "email": "Ali@gmail.com",
+      "comment": "HI"
+    }
+  ],
+  "score": [
+    {
+      "id": "828",
+      "student_name": "Maryam",
+      "subject_name": "Math2",
+      "faculty_name": "Farmacy",
+      "department_name": "BBA2",
+      "semester": "Five",
+      "score": 80
+    }
+  ]
+}

@@ -1,0 +1,302 @@
+
+
+<div class="flex justify-between  items-center bg-yellow-300 p-4 mt-2">
+    <h3 class=" text-3xl ">Employee</h3>
+    <button class="mr-10 px-10 py-5 bg-yellow-600 rounded-lg " (click)="openModal()">Add New</button>
+
+</div>
+@if(showModal){
+    <div class="mt-10  mx-32 min-h-[400px] bg-gray-100 shadow-lg p-2 rounded-lg">
+        <h3 class="text-center p-4 bg-teal-700 rounded-lg">Employee Add</h3>
+        <form action="" class="grid grid-cols-12 gap-4" #form="ngForm">
+            
+                <div class="col-span-5">
+
+                    <p class="mt-6">
+                        <span>Employee Name</span>
+                        <input type="text" name="ename" #name="ngModel" required maxlength="10" minlength="3" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Employee Name..." [(ngModel)]="employeeObj.employee_name" >
+                        
+                        @if(name?.touched){
+                            @if(name?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(name?.errors?.["minlength"]){
+                                <span class="text-red-700">Min length is 3</span>
+                            }
+            
+                            @if(name?.errors?.["maxlength"]){
+                                <span class="text-red-700">Max length is 20</span>
+                            }
+                           }
+                    </p>
+
+                    <p class="mt-6">
+                        <span>Father Name</span>
+                        <input type="text" name="fname" #fname="ngModel" required maxlength="20" minlength="3" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Father Name..." [(ngModel)]="employeeObj.employee_fname" >
+                        @if(fname?.touched){
+                            @if(fname?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(fname?.errors?.["minlength"]){
+                                <span class="text-red-700">Min length is 3</span>
+                            }
+            
+                            @if(fname?.errors?.["maxlength"]){
+                                <span class="text-red-700">Max length is 20</span>
+                            }
+                           }
+                    </p>
+            
+                    <p class="mt-6">
+                        <span>Last Name</span>
+                        <input type="text" name="lname" #lname="ngModel" required maxlength="20" minlength="3" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Last Name..." [(ngModel)]="employeeObj.employee_lastname" >
+                        @if(lname?.touched){
+                            @if(lname?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(lname?.errors?.["minlength"]){
+                                <span class="text-red-700">Min length is 3</span>
+                            }
+            
+                            @if(lname?.errors?.["maxlength"]){
+                                <span class="text-red-700">Max length is 20</span>
+                            }
+                           }
+                    </p>
+            
+                    <p class="mt-6">
+                        <span>Email</span>
+                        <input type="email" name="email" #email="ngModel" required maxlength="30" minlength="8"  class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your email address..." [(ngModel)]="employeeObj.email" >
+                    
+                        @if(email?.touched){
+                            @if(email?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(email?.errors?.["minlength"]){
+                                <span class="text-red-700">Min length is 8</span>
+                            }
+            
+                            @if(email?.errors?.["maxlength"]){
+                                <span class="text-red-700">Max length is 30</span>
+                            }
+                           }
+                    </p>
+            
+                    <p class="mt-6">
+                        <span>Phone</span>
+                        <input type="text" name="phone" #phone="ngModel" required maxlength="15" minlength="10" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your Phone number..." [(ngModel)]="employeeObj.phone" >
+                     
+                        @if(phone?.touched){
+                            @if(phone?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(phone?.errors?.["minlength"]){
+                                <span class="text-red-700">Min length is 10</span>
+                            }
+            
+                            @if(phone?.errors?.["maxlength"]){
+                                <span class="text-red-700">Max length is 15</span>
+                            }
+                           }
+                    </p>
+            
+                    <p class="mt-6">
+                        <span>Address</span>
+                          <textarea name="address" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2"  [(ngModel)]="employeeObj.address"></textarea>
+                        
+                    </p>
+            
+                    <p class="mt-6">
+                        <span>Education</span>
+                        <select name="education" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2"  [(ngModel)]="employeeObj.education">
+                            <optgroup label="Select your Gender">
+                               @for (item of education; track $index) {
+                                <option [value]="item">{{item}}</option>
+                               }
+                            </optgroup>
+                        </select>
+                        <input type="text" name="ename"  >
+                    </p>
+            
+                    
+            
+                    
+                    <p class="mt-6">
+                        <span>Gender</span>
+                        <select name="gender" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2"  [(ngModel)]="employeeObj.gender">
+                            <optgroup label="Select your Gender">
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </optgroup>
+                        </select>
+                        <input type="text" name="ename"  >
+                    </p>
+                </div>
+
+                <div class="col-span-5">
+
+                   
+            
+                    <p class="mt-6">
+                        <span>Age</span>
+                        <input type="number" #age="ngModel" required max="80" min="25" name="ege" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your age..." [(ngModel)]="employeeObj.age" >
+                   
+                        @if(age?.touched){
+                            @if(age?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(age?.errors?.["min"]){
+                                <span class="text-red-700">Min length is 25</span>
+                            }
+            
+                            @if(age?.errors?.["max"]){
+                                <span class="text-red-700">Max length is 80</span>
+                            }
+                           }
+                    </p>
+             
+                    <p class="mt-6">
+                        <span>Date Of Birth</span>
+                        <input type="date" name="dob" #dob="ngModel" required maxlength="10" minlength="8" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your date of join..." [(ngModel)]="employeeObj.date_of_birth" >
+                    
+                        @if(dob?.touched){
+                            @if(dob?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(dob?.errors?.["minlength"]){
+                                <span class="text-red-700">Min length is 8</span>
+                            }
+            
+                            @if(dob?.errors?.["maxlength"]){
+                                <span class="text-red-700">Max length is 10</span>
+                            }
+                           }
+                    </p>
+
+                    <p class="mt-6">
+                        <span>Date Of Join</span>
+                        <input type="date" name="dog" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your date of join..." [(ngModel)]="employeeObj.date_of_join" >
+                    </p>
+            
+                    <p class="mt-6">
+                        <span>Salary</span>
+                        <input type="number" #salary="ngModel" required max="30000" min="5000" name="salary" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your salary..." [(ngModel)]="employeeObj.salary" >
+                    
+                        @if(salary?.touched){
+                            @if(salary?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(salary?.errors?.["min"]){
+                                <span class="text-red-700">Min length is 5000</span>
+                            }
+            
+                            @if(salary?.errors?.["max"]){
+                                <span class="text-red-700">Max length is 30000</span>
+                            }
+                           }
+                    </p>
+
+                    <p class="mt-6">
+                        <span>Job</span>
+                        <input type="text" name="job" #job="ngModel" required maxlength="20" minlength="2"  class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your job..." [(ngModel)]="employeeObj.job" >
+                      
+                        @if(job?.touched){
+                            @if(job?.errors?.['required']){
+                                <span class="text-red-700">Fiald is required!</span>
+                               }
+                            @if(job?.errors?.["minlength"]){
+                                <span class="text-red-700">Min length is 2</span>
+                            }
+            
+                            @if(job?.errors?.["maxlength"]){
+                                <span class="text-red-700">Max length is 20</span>
+                            }
+                           }
+                    </p>
+            
+                    <p class="mt-6">
+                        <span>Faculty</span>
+                        <select name="department" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" [(ngModel)]="employeeObj.faculty_name">
+                             
+                            <optgroup label="Select your Department">
+                                @for (item of facultyList; track $index) {
+                                    <option [value]="item.faculty_name">{{item.faculty_name}}</option>
+                                }
+                            </optgroup>
+                        </select>
+                    </p>
+            
+                    <p class="mt-6">
+                        <span>Department</span>
+                        <select name="department" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" [(ngModel)]="employeeObj.department_name">
+                             
+                            <optgroup label="Select your Department">
+                                @for (item of departmentList; track $index) {
+                                    <option [value]="item.department_name">{{item.department_name}}</option>
+                                }
+                            </optgroup>
+                        </select>
+                        
+                    </p>
+                    <div class="flex justify-center items-center gap-2 mt-4">
+                        <button class="px-10 py-5 rounded-lg bg-teal-700 text-white" (click)="onSave()" [disabled]="!form.valid">{{employeeMode ? "Update":"Create"}}</button>
+                            
+                        
+                        <button class="px-10 py-5 rounded-lg bg-blue-500 text-white" (click)="closeModal()">Close</button>
+                        <button class="px-10 py-5 rounded-lg bg-yellow-300" (click)="onResset()">Reset</button>
+                    </div>
+
+                </div>
+            
+         
+    
+            
+        </form>
+    </div>
+}
+@else {
+    <div class="mt-2">
+        <table class="w-full text-center mt-2 ">
+            <thead class="bg-gray-500">
+                <tr>
+                    <th class="p-4">ID</th>
+                    <th>Name</th>
+                    <th>Lastname</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Salary</th>
+                    <th>Faculty</th>
+                    <th>Department</th>
+                    <th>Gender</th>
+                    <th>Functionality</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (item of employeeList; track $index) {
+                    <tr>
+                        <td>{{item.id}}</td>
+                        <td>{{item.employee_name}}</td>
+                        <td>{{item.employee_lastname}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.phone}}</td>
+                        <td>{{item.salary}}</td>
+                        <td>{{item.faculty_name}}</td>
+                        <td>{{item.department_name}}</td>
+                        <td>{{item.gender}}</td>
+                        <td class="grid grid-cols-12 gap-2">
+                            <button class="col-span-5 py-4 bg-teal-600 text-white rounded-lg " (click)="updateEmployee(item)">Edit</button>
+                            <button class="col-span-5 py-4 bg-yellow-300 rounded-lg " (click)="deleteEmployee(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    
+    
+    </div>
+}
+
+
+
+

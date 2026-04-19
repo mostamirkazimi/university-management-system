@@ -1,0 +1,136 @@
+<h3 class="text-center p-6 text-2xl bg-yellow-300 mt-2">ۤScore</h3>
+<div class="grid grid-cols-12 gap-2 flex-row-reverse mt-2 font-serif">
+   
+    <div class="col-span-7">
+       
+        <table class="w-full text-center">
+            <thead class="bg-teal-700 rounded-lg text-white">
+                <tr>
+                    <th class="p-4">#</th>
+                    <th>Student Name</th>
+                    <th>Subject Name</th>
+                    <th>Faculty</th>
+                    <th>Department</th>
+                    <th>Semester</th>
+                    <th>Score</th>
+                    <th>Functionality</th>
+                </tr>
+            </thead>
+            <tbody >
+                @for (item of scoreList; track $index) {
+                    <tr >
+                        <td>{{item.id}}</td>
+                        <td>{{item.student_name}}</td>
+                        <td>{{item.subject_name}}</td>
+                        <td>{{item.faculty_name}}</td>
+                        <td>{{item.department_name}}</td>
+                        <td>{{item.semester}}</td>
+                        <td>{{item.score}}</td>
+                        <td class="grid grid-cols-12 gap-4">
+                            <button class="col-span-5 bg-teal-700 text-white rounded-lg py-4" (click)="updateScore(item)">Edit</button>
+                            <button class="col-span-5 bg-yellow-300 rounded-lg" (click)="deleteScore(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+     <div class="col-span-4 ">
+        <h3 class="p-4 text-white bg-teal-700">{{scoreMode ? "Update Subject":"Add New Score"}}</h3>
+         <form action="" #form="ngForm">
+
+            <p class="mt-6">
+                <span>Student ID</span>
+                <input type="text" #stuId="ngModel" required minlength="2" maxlength="100" name="stuId" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="scoreObj.id" (change)="onChange()" >
+
+                @if(stuId?.touched){
+                    @if(stuId?.errors?.['required']){
+                        <span class="text-red-700">Fiald is required!</span>
+                       }
+                    @if(stuId?.errors?.["minlength"]){
+                        <span class="text-red-700">Min length is 0</span>
+                    }
+    
+                    @if(stuId?.errors?.["maxlength"]){
+                        <span class="text-red-700">Max length is 100</span>
+                    }
+                   }
+            
+
+            </p>
+
+            <p class="mt-6">
+                <span>Student </span>
+                <input type="text" [value]="studentObj.student_name" [(ngModel)]="scoreObj.student_name" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2">
+
+                    
+                
+            </p>
+
+            <p class="mt-6">
+                <span>Subject </span>
+                    <select name="subject" id="" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="scoreObj.subject_name" >
+                        <optgroup label="select Subject">
+                            @for (item of subjectList; track $index) {
+                                <option [value]="item.subject_name">{{item.subject_name}}</option>
+                            }
+                        </optgroup>
+                    </select>
+                
+            </p>
+            
+            <p class="mt-6">
+                <span>Faculty </span>
+                <input type="text" [value]="studentObj.faculty_name" [(ngModel)]="scoreObj.faculty_name" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2">
+
+                
+            </p>
+
+            <p class="mt-6">
+                <span>Department </span>
+
+                <input type="text" [value]="studentObj.department_name" [(ngModel)]="scoreObj.department_name" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2">
+                    
+                
+            </p>
+
+            <p class="mt-6">
+                <span>Semester </span>
+
+                <input type="text" [value]="studentObj.semster" [(ngModel)]="scoreObj.semester" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2">
+
+                    
+                
+            </p>
+
+            <p class="mt-6">
+                <span>Score</span>
+                <input type="number" #score="ngModel" required min="0" max="100" name="score" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="scoreObj.score">
+
+                @if(score?.touched){
+                    @if(score?.errors?.['required']){
+                        <span class="text-red-700">Fiald is required!</span>
+                       }
+                    @if(score?.errors?.["min"]){
+                        <span class="text-red-700">Min length is 0</span>
+                    }
+    
+                    @if(score?.errors?.["max"]){
+                        <span class="text-red-700">Max length is 100</span>
+                    }
+                   }
+            
+
+            </p>
+
+            <div class="grid grid-cols-12 gap-2 mt-4">
+                <button (click)="onSave()" class="col-span-5 bg-teal-700 py-4 rounded-lg text-white" [disabled]="!form.valid">
+                    {{scoreMode ? "Update":"Create"}}
+                </button>
+                <button (click)="onReset()" class="col-span-5 bg-yellow-300 py-4 rounded-lg " (click)="onChange()">Reset</button>
+            </div>
+         </form>
+     </div>
+</div>

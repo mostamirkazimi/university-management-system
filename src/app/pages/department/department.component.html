@@ -1,0 +1,95 @@
+<h3 class="text-center p-6 text-2xl bg-yellow-300 mt-2">ۤDepartment</h3>
+<div class="grid grid-cols-12 gap-2 flex-row-reverse mt-2 font-serif">
+   
+    <div class="col-span-7">
+       
+        <table class="w-full text-center">
+            <thead class="bg-teal-700 rounded-lg text-white">
+                <tr>
+                    <th class="p-4">#</th>
+                    <th>Department Name</th>
+                    <th>Create Date</th>
+                    <th>Faculty</th>
+                    <th>Functionality</th>
+                </tr>
+            </thead>
+            <tbody >
+                @for (item of departmentList; track $index) {
+                    <tr >
+                        <td>{{item.id}}</td>
+                        <td>{{item.department_name}}</td>
+                        <td>{{item.createDate}}</td>
+                        <td>{{item.faculty_name}}</td>
+                        <td class="grid grid-cols-12 gap-4">
+                            <button class="col-span-5 bg-teal-700 text-white rounded-lg py-4" (click)="updateDepartment(item)">Edit</button>
+                            <button class="col-span-5 bg-yellow-300 rounded-lg" (click)="deleteDepartment(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+     <div class="col-span-4 ">
+        <h3 class="p-4 text-white bg-teal-700">{{departmentMode ? "Update Department":"Add New Department"}}</h3>
+         <form action="" #form="ngForm">
+
+            <p class="mt-6">
+                <span>Department Name</span>
+                <input type="text" name="fname" #fname="ngModel" required minlength="2" maxlength="20" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="departmentObj.department_name">
+            
+                @if(fname?.touched){
+                    @if(fname?.errors?.['required']){
+                        <span class="text-red-700">Fiald is required!</span>
+                       }
+                    @if(fname?.errors?.["minlength"]){
+                        <span class="text-red-700">Min length is 2</span>
+                    }
+    
+                    @if(fname?.errors?.["maxlength"]){
+                        <span class="text-red-700">Max length is 20</span>
+                    }
+                   }
+            </p>
+
+            <p class="mt-6">
+                <span>Create Date</span>
+                <input type="date" name="date" #date="ngModel" required maxlength="20" minlength="10" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="departmentObj.createDate">
+                @if(date?.touched){
+                    @if(date?.errors?.['required']){
+                        <span class="text-red-700">Fiald is required!</span>
+                       }
+                    @if(date?.errors?.["minlength"]){
+                        <span class="text-red-700">Min length is 10</span>
+                    }
+    
+                    @if(date?.errors?.["maxlength"]){
+                        <span class="text-red-700">Max length is 20</span>
+                    }
+                   }
+            </p>
+
+
+            <p class="mt-6">
+                <span>Faculty Name</span>
+                <select name="faculty" id="" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="departmentObj.faculty_name">
+                    <optgroup label="Selected your Faculty">
+                        @for (item of facultyList; track $index) {
+                            <option [value]="item.faculty_name">{{item.faculty_name}}</option>
+                        }
+                    </optgroup>
+                </select>
+                
+            </p>
+
+            <div class="grid grid-cols-12 gap-2 mt-4">
+                <button (click)="onSave()" class="col-span-5 bg-teal-700 py-4 rounded-lg text-white" [disabled]="!form.valid">
+                    {{departmentMode ? "Update":"Create"}}
+                </button>
+                <button (click)="onReset()" class="col-span-5 bg-yellow-300 py-4 rounded-lg ">Reset</button>
+            </div>
+
+         </form>
+     </div>
+</div>

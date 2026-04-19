@@ -1,0 +1,67 @@
+<div class="bg-yellow-300 p-4 flex justify-between items-center mt-2">
+    <h3>All Comments</h3>
+    <button class="bg-yellow-700 px-10 py-5 rounded-lg" (click)="openModal()">Add Comment</button>
+</div>
+@if(showModal){
+    <div class="p-4 w-[480px] mx-auto bg-gray-200 mt-4 rounded-lg">
+        <h3 class="text-center bg-teal-700 text-white p-4 rounded-lg">New Comment</h3>
+        <form action="" #form="ngForm">
+            <p class="mt-6">
+                <input type="text" name="name" #name="ngModel" required minlength="3" maxlength="20" class="w-full p-4 rounded-lg border-2 border-gray-300" placeholder="Enter your name ..." [(ngModel)]="commentObj.name">
+               @if(name?.touched){
+                @if(name?.errors?.['required']){
+                    <span class="text-red-700">Fiald is required!</span>
+                   }
+                @if(name?.errors?.["minlength"]){
+                    <span class="text-red-700">Min length is 3</span>
+                }
+
+                @if(name?.errors?.["maxlength"]){
+                    <span class="text-red-700">Max length is 20</span>
+                }
+               }
+               
+            </p>
+    
+            <p class="mt-6">
+                
+                <input type="email"  name="email" #email="ngModel" required maxlength="30" minlength="8" class="w-full p-4 rounded-lg border-2 border-gray-300" placeholder="Enter your email ..." [(ngModel)]="commentObj.email">
+                @if(email?.touched){
+                    @if(email?.errors?.['required']){
+                        <span class="text-red-700">Fiald is required!</span>
+                       }
+                    @if(email?.errors?.["minlength"]){
+                        <span class="text-red-700">Min length is 8</span>
+                    }
+    
+                    @if(email?.errors?.["maxlength"]){
+                        <span class="text-red-700">Max length is 30</span>
+                    }
+                   }
+            </p>
+            <p class="mt-6">
+                 <textarea name="comment" id="" class="w-full p-4 rounded-lg border-2 border-gray-300" placeholder="Enter your nmassage ..." [(ngModel)]="commentObj.comment"></textarea>
+            
+            </p>
+    
+            <div class="mt-4 flex justify-between items-center">
+                 <button class="bg-teal-700 px-10 py-5 text-white rounded-lg" (click)="createComment()" >Add</button>
+                 <button class="bg-yellow-300 px-10 py-5 rounded-lg" (click)="onReset()">Reset</button>
+                 <button class="bg-yellow-700 px-10 py-5 rounded-lg" (click)="closeModal()">close</button>
+            </div>
+        </form>
+    </div>
+}
+@else {
+    @for (item of commentList; track $index) {
+        <div class="w-[900px] bg-gray-200 min-h-56 mx-auto rounded-lg px-20 py-10 mt-4 ">
+            <button (click)="deleteComment(item.id)" class="ml-[100%] text-red-700">X</button>
+            <h1 class="text-3xl text-teal-900">{{item.name}}</h1>
+            <h3  class="mt-4 text-2xl text-blue-800"><a routerLink="{{item.email}}">{{item.email}}</a></h3>
+            <p class="mt-4 text-justify">  {{item.comment}}</p>
+        </div>
+    }
+    
+}
+
+

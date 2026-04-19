@@ -1,0 +1,96 @@
+<h3 class="text-center p-6 text-2xl bg-yellow-300 mt-2">ۤFaculty</h3>
+<div class="grid grid-cols-12 gap-2 flex-row-reverse mt-2 font-serif">
+   
+    <div class="col-span-7">
+       
+        <table class="w-full text-center">
+            <thead class="bg-teal-700 rounded-lg text-white">
+                <tr>
+                    <th class="p-4">#</th>
+                    <th>Faculty Name</th>
+                    <th>Create Date</th>
+                    <th>Faculty Logo</th>
+                    <th>Functionality</th>
+                </tr>
+            </thead>
+            <tbody >
+                @for (item of facultyList; track $index) {
+                    <tr >
+                        <td>{{item.id}}</td>
+                        <td>{{item.faculty_name}}</td>
+                        <td>{{item.createDate}}</td>
+                        <td>{{item.faculty_logo}}</td>
+                        <td class="grid grid-cols-12 gap-4">
+                            <button class="col-span-5 bg-teal-700 text-white rounded-lg py-4" (click)="updateFaculty(item)">Edit</button>
+                            <button class="col-span-5 bg-yellow-300 rounded-lg" (click)="deleteFaculty(item.id)">Delete</button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+
+     <div class="col-span-4 ">
+        <h3 class="p-4 text-white bg-teal-700">{{facultyMode ? "Update Faculty":"Add New Faculty"}}</h3>
+         <form action="" #form="ngForm">
+
+            <p class="mt-6">
+                <span>Faculty Name</span>
+                <input type="text" name="fname" #fname="ngModel" required maxlength="10" minlength="2"  class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="facultyObj.faculty_name">
+              
+                @if(fname?.touched){
+                    @if(fname?.errors?.['required']){
+                        <span class="text-red-700">Fiald is required!</span>
+                       }
+                    @if(fname?.errors?.["minlength"]){
+                        <span class="text-red-700">Min length is 2</span>
+                    }
+    
+                    @if(fname?.errors?.["maxlength"]){
+                        <span class="text-red-700">Max length is 10</span>
+                    }
+                   }
+            </p>
+
+
+            <p class="mt-6">
+                <span>Create Date</span>
+                <input type="date" name="date" #cdate="ngModel" required minlength="8" maxlength="10" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="facultyObj.createDate">
+            
+                @if(cdate?.touched){
+                    @if(cdate?.errors?.['required']){
+                        <span class="text-red-700">Fiald is required!</span>
+                       }
+                    @if(cdate?.errors?.["minlength"]){
+                        <span class="text-red-700">Min length is 8</span>
+                    }
+    
+                    @if(cdate?.errors?.["maxlength"]){
+                        <span class="text-red-700">Max length is 10</span>
+                    }
+                   }
+            </p>
+
+
+            <p class="mt-6">
+                <span>Faculty Logo </span>
+                <input type="text" name="logo" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="facultyObj.faculty_logo">
+            </p>
+
+            <p class="mt-6">
+                <span>Description </span>
+
+                <textarea name="description" id="" class="w-full rounded-lg border-2 border-gray-400 p-4 mt-2" [(ngModel)]="facultyObj.description"></textarea>
+                
+            </p>
+
+            <div class="grid grid-cols-12 gap-2 mt-4">
+                <button (click)="onSave()" class="col-span-5 bg-teal-700 py-4 rounded-lg text-white" [disabled]="!form.valid">
+                    {{facultyMode ? "Update":"Create"}}
+                </button>
+                <button (click)="onReset()" class="col-span-5 bg-yellow-300 py-4 rounded-lg ">Reset</button>
+            </div>
+         </form>
+     </div>
+</div>

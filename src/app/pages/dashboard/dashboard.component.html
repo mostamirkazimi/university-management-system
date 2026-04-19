@@ -1,0 +1,117 @@
+<div class="mt-4  px-32 py-20 bg-teal-700 text-white h-64 rounded-lg">
+    <h2 class="text-3xl">Balkh University Information </h2>
+    <p class="font-thin p-4 pb-4">Balkh University is one of the most important and largest institutions of higher education in Afghanistan. It is located in the city of Mazar-i-Sharif and plays a key role in providing academic opportunities for students, especially in the northern region of the country.
+
+The university was established in the late 1980s (around 1987) and has since grown into a respected academic center. It offers a wide range of faculties, including Medicine, Engineering, Computer Science, Economics, Law and Political Science, Literature, Journalism, Agriculture, Veterinary Science, and Education. This diversity allows thousands of students from different provinces to pursue their higher education at Balkh University.
+
+Balkh University operates under the Ministry of Higher Education and is known for training skilled professionals in various fields. It is particularly recognized for its strong programs in Medicine, Engineering, and Information Technology (IT).
+
+Overall, Balkh University is considered a valuable choice for students who want to continue their higher education within Afghanistan, thanks to its academic environment, experienced lecturers, and variety of study programs.</p>
+</div>
+<div class="w-full mx-auto mt-4">
+      <img src="../../../../asssets/1.jfif" alt="" class="w-full h-[400px]">
+
+
+      <div class="grid grid-cols-12 font-thin mt-5">
+        <div class="col-span-6 gap-2 shadow-lg p-4 ">
+           <h1 class="bg-teal-600 text-center">📍 General Information</h1>
+           <p class="p-4">
+                 Balkh University is one of the largest public universities in Afghanistan, located in Mazar-i-Sharif.
+
+           </p>
+           <ul class="px-4 pb-4">
+            <li>
+                🎓 Type: Public university
+            </li>
+            <li>📅 Established: Around 1987–1988</li>
+            <li>👨‍🎓 Students: Approximately 5,000 – 18,000</li>
+            <li>🏫 One of the top universities in northern Afghanistan</li>
+           </ul>
+
+           <h1 class="bg-teal-600 text-center">
+                    ⭐ Importance & Features
+           </h1>
+
+           <p class="p-4">
+                            A major educational center in northern Afghanistan
+                Operates under the Ministry of Higher Education
+                Offers mainly Bachelor’s degree programs
+                Known for popular fields like Medicine, Engineering, and IT
+           </p>
+
+           <h1 class="bg-teal-600 text-center">
+                     📝 Note
+           </h1>
+
+           <p class="p-4">
+            Balkh University is a good choice for students in northern regions, especially those interested in technology, health sciences, and engineering fields.
+           </p>
+        </div>
+
+        <div class="col-span-6 shadow-lg p-4">
+            <h1 class="bg-teal-600 text-center">
+                🏫 Faculties (Departments)
+            </h1>
+
+              
+
+                <ul class="p-4">
+                    <li>🏥 Medicine</li>
+                    <li>💻 Computer Science</li>
+                    <li>⚙️ Engineering</li>
+                    <li>📊 Economics</li>
+                    <li>⚖️ Law and Political Science</li>
+                    <li>📚 Languages and Literature</li>
+                    <li>📰 Journalism</li>
+                    <li>🌾 Agriculture</li>
+                    <li>🐄 Veterinary Science</li>
+                    <li>🔬 Natural Sciences</li>
+                    <li>👩‍🏫 Education</li>
+                    <li>🏛 Public Administration</li>
+                </ul>
+
+    
+
+    <h1 class="bg-teal-600 text-center">
+        📊 Ranking
+    </h1>
+
+    <ul class="p-4">
+        <li>🇦🇫 National ranking: حوالي Top 10 in Afghanistan</li>
+        <li>🌍 Global ranking: Around 12,000+ worldwide</li>
+    </ul>
+                
+        
+    
+        </div>
+      </div>
+      
+    </div>
+
+    
+
+<div class="grid grid-cols-12 gap-4">
+   
+
+    
+    
+    @for (item of facultyList; track $index) {
+        <div class="col-span-4  mt-4 mx-10 rounded-lg">
+            <a>
+                <div class="row-span-5 bg-teal-600 h-52 " >
+                    <h2 class="text-center pt-20 text-4xl">{{item.faculty_name}}</h2>
+                </div>
+            </a>
+
+            <div class="row-span-5 bg-gray-200 p-4">
+                    <h2 class="text-teal-900">{{item.faculty_name}}</h2>
+                    <p class="text-teal-400"> Create Date: {{item.createDate}}</p>
+                    <div class="p-4 text-justify text-gray-800">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, iusto.</p>
+                        {{item.description}}
+                    </div>
+            </div>
+        </div>
+    }
+    
+</div>

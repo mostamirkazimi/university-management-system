@@ -1,0 +1,192 @@
+
+
+
+<div class="flex justify-between  items-center bg-yellow-300 p-4 mt-2">
+    <h3 class=" text-3xl ">Teacher </h3>
+    <button class="mr-10 px-10 py-5 bg-yellow-600 rounded-lg " (click)="openModal()">Add New</button>
+
+</div>
+
+
+    @if(showModal){
+        <div class="mt-10  mx-32 min-h-[400px] bg-gray-100 shadow-lg p-2 rounded-lg">
+            <h3 class="text-center p-4 bg-teal-700 rounded-lg">Teacher Add</h3>
+            <form action="" class="grid grid-cols-12 gap-4 ml-32">
+                
+                    <div class="col-span-5">
+    
+                        <p class="mt-6">
+                            <span>Teacher Name</span>
+                            <input type="text" name="tname" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Employee Name..." [(ngModel)]="teacherObj.teacher_name" >
+                        </p>
+                        <p class="mt-6">
+                            <span>Father Name</span>
+                            <input type="text" name="fname" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Father Name..." [(ngModel)]="teacherObj.teacher_fname" >
+                        </p>
+                
+                        <p class="mt-6">
+                            <span>Last Name</span>
+                            <input type="text" name="lname" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Last Name..." [(ngModel)]="teacherObj.teacher_lastname" >
+                        </p>
+                
+                        <p class="mt-6">
+                            <span>Email</span>
+                            <input type="email" name="email" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your email address..." [(ngModel)]="teacherObj.email" >
+                        </p>
+                
+                        <p class="mt-6">
+                            <span>Phone</span>
+                            <input type="text" name="phone" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your Phone number..." [(ngModel)]="teacherObj.phone" >
+                        </p>
+                
+                        <p class="mt-6">
+                            <span>Address</span>
+                              <textarea name="address" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2"  [(ngModel)]="teacherObj.address"></textarea>
+                            
+                        </p>
+                
+                        <p class="mt-6">
+                            <span>Education</span>
+                            <select name="education" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2"  [(ngModel)]="teacherObj.education">
+                                <optgroup label="Select your Gender">
+                                   @for (item of education; track $index) {
+                                    <option [value]="item">{{item}}</option>
+                                   }
+                                </optgroup>
+                            </select>
+                            <input type="text" name="ename"  >
+                        </p>
+                
+                        
+                
+                        
+                        <p class="mt-6">
+                            <span>Gender</span>
+                            <select name="gender" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2"  [(ngModel)]="teacherObj.gender">
+                                <optgroup label="Select your Gender">
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="other">Other</option>
+                                </optgroup>
+                            </select>
+                            <input type="text" name="ename"  >
+                        </p>
+                    </div>
+    
+                    <div class="col-span-5">
+    
+                       
+                
+                        <p class="mt-6">
+                            <span>Age</span>
+                            <input type="number" name="ege" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your age..." [(ngModel)]="teacherObj.age" >
+                        </p>
+                 
+                        <p class="mt-6">
+                            <span>Date Of Birth</span>
+                            <input type="date" name="dob" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your date of join..." [(ngModel)]="teacherObj.date_of_Birth" >
+                        </p>
+    
+                        <p class="mt-6">
+                            <span>Date Of Join</span>
+                            <input type="date" name="dog" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your date of join..." [(ngModel)]="teacherObj.date_of_Join" >
+                        </p>
+                
+                        <p class="mt-6">
+                            <span>Salary</span>
+                            <input type="number" name="salary" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your salary..." [(ngModel)]="teacherObj.salary" >
+                        </p>
+    
+                        <p class="mt-6">
+                            <span>OverTime</span>
+                            <input type="number" name="overtime" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" placeholder="Enter your overtime..." [(ngModel)]="teacherObj.over_time" >
+                        </p>
+    
+                       
+                
+                        <p class="mt-6">
+                            <span>Faculty</span>
+                            <select name="department" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" [(ngModel)]="teacherObj.faculty_name">
+                                 
+                                <optgroup label="Select your Department">
+                                    @for (item of facultyList; track $index) {
+                                        <option [value]="item.faculty_name">{{item.faculty_name}}</option>
+                                    }
+                                </optgroup>
+                            </select>
+                        </p>
+                
+                        <p class="mt-6">
+                            <span>Department</span>
+                            <select name="department" id="" class="p-4 w-full rounded-lg border-2 border-gray-400 mt-2" [(ngModel)]="teacherObj.department_name">
+                                 
+                                <optgroup label="Select your Department">
+                                    @for (item of departmentList; track $index) {
+                                        <option [value]="item.department_name">{{item.department_name}}</option>
+                                    }
+                                </optgroup>
+                            </select>
+                            
+                        </p>
+                        <div class="flex justify-center items-center gap-2 mt-4">
+                            <button class="px-10 py-5 rounded-lg bg-teal-700 text-white" (click)="onSave()">
+                                {{teacherMode ? "Update":"Create"}}
+                            </button>
+                            <button class="px-10 py-5 rounded-lg bg-blue-500 text-white" (click)="closeModal()">Close</button>
+                            <button class="px-10 py-5 rounded-lg bg-yellow-300" (click)="onResset()">Reset</button>
+                        </div>
+    
+                    </div>
+                
+             
+        
+                
+            </form>
+        </div>
+    }
+    @else {
+        <div class="mt-2">
+            <table class="w-full text-center mt-2 ">
+                <thead class="bg-gray-500">
+                    <tr>
+                        <th class="p-4">ID</th>
+                        <th>Name</th>
+                        <th>Lastname</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Salary</th>
+                        <th>Faculty</th>
+                        <th>Department</th>
+                        <th>Gender</th>
+                        <th>Functionality</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of teacherList; track $index) {
+                        <tr>
+                            <td>{{item.id}}</td>
+                            <td>{{item.teacher_name}}</td>
+                            <td>{{item.teacher_lastname}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.phone}}</td>
+                            <td>{{item.salary}}</td>
+                            <td>{{item.faculty_name}}</td>
+                            <td>{{item.department_name}}</td>
+                            <td>{{item.gender}}</td>
+                            <td class="grid grid-cols-12 gap-2">
+                                <button class="col-span-5 py-4 bg-teal-600 text-white rounded-lg " (click)="updateTeacher(item)">Edit</button>
+                                <button class="col-span-5 py-4 bg-yellow-300 rounded-lg " (click)="deleteTeacher(item.id)">Delete</button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        
+        
+        </div>
+    }
+    
+
+
+
+
